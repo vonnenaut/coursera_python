@@ -1,0 +1,12 @@
+Week 2 quiz
+*1. 29  28
+2. 1/2*n*(n+1)  correct
+3. n!  correct
+*4. f(0) = 1f(1) = 1(f(n)) = 2f(n-1) + 1
+	n-2
+5. 2n-1    f(n)=f(n/2)+n  or  f(n)=2f(n/2)+1 correct
+*6. 2p(n-1)
+*7. 2^(n-1)
+8. n  correct
+9. 2(t(n/2)) + n  correct
+10. nlogn  correct

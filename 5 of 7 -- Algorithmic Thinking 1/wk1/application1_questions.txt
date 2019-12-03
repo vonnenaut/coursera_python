@@ -1,0 +1,70 @@
+2.
+Is the expected value of the in-degree the same for every node in an ER graph?
+     Yes -- the probability (p) is the same for every node as per the ER algorithm, therefore the expected value is also the same.
+
+
+What does the in-degree distribution for an ER graph look like? 
+     It resembles a bell curve or an arc.
+
+
+Does the shape of the in-degree distribution plot for ER look similar to the shape of the in-degree distribution for the citation graph?
+     No, the ER graph resembles a bell curve, sloping upward, reaching a peak and then sloping downward, while the citation graph resembles a half-curve which can be approxiated by a curve with a negative slope from top-left to bottom-right.  
+
+
+
+Question 3 (2 pts)
+
+We next consider a different process for generating synthetic directed graphs. In this process, a random directed graph is generated iteratively, where in each iteration a new node is created, added to the graph, and connected to a subset of the existing nodes. This subset is chosen based on the in-degrees of the existing nodes. More formally, to generate a random directed graph in this process, the user must specify two parameters: n, which is the final number of nodes, and m (where m≤n), which is the number of existing nodes to which a new node is connected during each iteration. Notice that m is fixed throughout the procedure.
+
+The algorithm starts by creating a complete directed graph on m nodes. (Note, you've already written the code for this part in the Project.) Then, the algorithm grows the graph by adding n−m nodes, where each new node is connected to m nodes randomly chosen from the set of existing nodes. As an existing node may be chosen more than once in an iteration, we eliminate duplicates (to avoid parallel edges); hence, the new node may be connected to fewer than m existing nodes upon its addition.
+
+The full description of the algorithm for generating random directed graphs with this process is given below, and is called Algorithm DPA (note that the m in the input is a parameter that is specified to this algorithm, and it does not denote the total number of edges in the resulting graph). The notation ∑x∈Sx means the "sum of all elements x in set S." For example, if S={1,7,12}, then ∑x∈Sx≡1+7+12=20.
+
+
+Notice that this algorithm is more complex than the ER algorithm. As a result, reasoning about the properties of the graphs that it generates analytically is not as simple. When such a scenario arises, we can implement the algorithm, run it, produce graphs, and visually inspect their in-degree distributions. In general, this is a powerful technique: When analytical solutions to systems are very hard to derive, we can simulate the systems and generate data that can be analyzed to understand the properties of the systems.
+
+For this question, we will choose values for n and m that yield a DPA graph whose number of nodes and edges is roughly the same to those of the citation graph. For the nodes, choosing n to be the number of nodes as the citation graph is easy. Since each step in the DPA algorithm adds m edges to the graph, a good choice for m is an integer that is close to the average out-degree of the physics citation graph.
+
+For this question, provide numerical values for n and m that you will use in your construction of the DPA graph.
+
+n = 27,000
+m = 250 (?)
+12, 13, 14 or 15
+
+
+
+
+Question 4 (3 pts)
+Does the plot follow the formatting guidelines for plots?
+Is the plot a log/log plot of a normalized distribution?
+Is the content of the plot correct?
+
+
+
+
+Question 5 (3 pts)
+
+In this last problem, we will compare the in-degree distribution for the citation graph to the in-degree distribution for the DPA graph as constructed in Question 4. In particular, we will consider whether the shape of these two distributions are similar and, if they are similar, what might be the cause of the similarity.
+
+To help you in your analysis, you should consider the following three phenomena:
+
+The "six degrees of separation" phenomenon,
+The "rich gets richer" phenomenon, and
+The "Hierarchical structure of networks" phenomenon.
+If you're not familiar with these phenomena, you can read about them by conducting a simple Google or Wikipedia search. Your task for this problem is to consider how one of these phenomena might explain the structure of the citation graph or, alternatively, how the citations patterns follow one of these phenomena.
+
+When answering this question, please include answers to the following:
+
+Is the plot of the in-degree distribution for the DPA graph similar to that of the citation graph? Provide a short explanation of the similarities or differences. Focus on the various properties of the two plots as discussed in the class page on "Creating, formatting, and comparing plots".
+
+No, not at all.  It is, however, similar to the ER graph produced and described in the answer to question 2 and so descriptions will be similar.  Both plots have a similar number of lines, both having approximately 27,000 nodes and approximately 250 connections per node average.    
+
+The citation graph has neatly-stacked vertical columns of data points which does not look natural or random at all but seem to follow a definite pattern.  On the other hand, like the graph for question 2, the DPA plot looks random, semi-spherical like buck-shot with a few outliers toward the left edge of the graph.  The citation, ignoring the vertical stacking, tends to increase linearly toward the right but the DPA graph plot cannot be approximated by any curve.   
+
+
+Which one of the three social phenomena listed above mimics the behavior of the DPA process? Provide a short explanation for your answer.
+Could one of these phenomena explain the structure of the physics citation graph? Provide a short explanation for your answer.
+
+Six Degrees of Separation is evident in the behavior of the DPA process.  This simple idea, made into a game called 'Six Degrees of Kevin Bacon' but long before referenced in Frigyes Karinthy's 1929 short story, 'Chains', is that any two people are six or fewer steps away from each other through mutual acquiantances (https://en.wikipedia.org/wiki/Six_degrees_of_separation).  And so, starting with a complete graph of 250 nodes and adding 26,750 new nodes to 250 random other nodes, one at a time to the growing total, results in a manifestation of this idea visually as a centralized, i.e., (semi-)spherical shape.
+
+The rich get richer, i.e., Matthew effect, a description of over-attribution to famed practitioners, is on full display with the citation graph.  This effect is described at the wikipedia article as demonstrating how eminent or famous scientists get more credit than unknown individuals or graduate students even if it is undue.  This leads to 'a concentration of talent and resources' (https://en.wikipedia.org/wiki/Matthew_effect)  In other words, there could be a lot more papers being referenced, which would introduce some randomness to the citation graph, but instead, the Matthew effect causes over-citation of a few famous or notable contributors to the field or topic, ignoring all the lesser-known individuals who as a whole constitute the true picture of contributions to the field.  

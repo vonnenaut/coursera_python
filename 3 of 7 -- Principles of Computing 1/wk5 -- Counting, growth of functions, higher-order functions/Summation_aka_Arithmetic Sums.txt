@@ -1,0 +1,21 @@
+Arithmetic Sums
+
+In counting the number of steps executed during the evaluation of loops or nested sequence of loops, various arithmetic sums will sometimes arise. Here is a quick overview of the notation for arithmetic sums and closed form solutions for some common sums.
+
+Notation
+
+An arithmetic sum is the operation of adding a sequence of numbers. If we index the numbers in the sequence by the subscript i, the arithmetic sum can be expressed mathematically in the form
+
+∑i=0nai=a0+a1+a2+⋯an.
+Note that, as opposed to Python, both the lower bound (zero) and the upper bound (n) are also included in the sum.
+
+Common arithmetic sums and their solutions
+
+Closed form expressions for almost all of the various arithmetic sums that you will encounter during this class are listed below. It's not particularly important to memorize these expressions, just be aware that they exists so you know that you can look them up when necessary.
+
+∑i=0n1=1+1+...+1=n+1 The sum of a constant expression is a linear polynomial in n.
+∑i=0nn=n+n+n+...+n=(n+1)n The sum of a linear expression in n is a quadratic polynomial in n.
+∑i=0ni=0+1+2+...+n=12(n+1)n This sum is known as a triangular sum. The sum of a linear expression in i is also a quadratic polynomial in n.
+∑i=0n2i=20+21+22+...+2n=2n+1−1 This sum is known as a geometric sum. In most cases, the sum of a sequence of exponential expressions is again exponential.
+∑i=0nαi=α0+α1+α2+...+αn=αn+1−1α−1 Note that this relation holds as long as α≠1. If 0<α<1 and the sum is infinite, i.e; n=∞, the sum reduces to 11−α.
+∑i=1n1i=1+12+13+...+1n≈log(n)+γ This sum is called a harmonic sum and has only an approximate solution (indicated by the symbol ≈). Here, γ is a small constant.

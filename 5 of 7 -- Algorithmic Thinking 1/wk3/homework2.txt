@@ -1,0 +1,71 @@
+Algorithmic Thinking 1
+Week 3
+Homework #2/Quiz #2 
+
+*1.  The set of all nodes that have degree 1.
+The set of all nodes that are connected to every other node.
+
+
+*2.  O(n^2) ? 
+O(n log n) 
+
+3.  O(n^2)
+
+4.  O(n^2)
+
+*5.  f(n) is O(n2).
+     O(n)
+
+6.  O(n)
+
+7.  O(n^3)
+
+8.  ?? a0 + a1 + a2 + a3
+*9.  a0 + a1 + a2 + a3
+2*a0 + 2*a1 + 2*a2 + 2*a3
+
+*10.  5 8
+3 8
+
+11.  
+Line 5: g,i
+
+Line 8: du≠∞
+
+Line 10: CC∪{W}
+
+Line 11: RemainingNodes−W
+
+
+Line 5: g,i
+
+Line 8: du=∞
+
+Line 10: CC∪W
+
+Line 11: RemainingNodes−W
+
+
+*12.  O(m+n)
+n^2
+
+13.  
+Line 5: g,i
+Line 6: CC∪{W}
+Line 7: RemainingNodes−W
+
+14.  O(m+n)
+
+*15.  The running times of CC-Distance and CC-Visited are asymptotically the same.
+
+CC-Distance is slower.
+
+
+16.  (Ak)[i,j]
+
+17.  The length of the shortest path is the smallest non-negative integer k such that (Ak)[i,j] is non-zero.
+
+18.  (Ak)[i,j]−(A^k)[i,j] where k is the length of the shortest path from node i to node j in g^.
+
+try A.
+(Ak)[i,j]−(A^k)[i,j] where k is the length of the shortest path from node i to node j in g.

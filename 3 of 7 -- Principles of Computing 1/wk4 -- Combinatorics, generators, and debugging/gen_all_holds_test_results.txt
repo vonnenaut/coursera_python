@@ -1,0 +1,67 @@
+"""
+Function to generate permutations of outcomes
+Repetition of outcomes not allowed
+"""
+
+
+def gen_permutations(outcomes, length):
+    """
+    Iterative function that generates set of permutations of
+    outcomes of length num_trials
+    No repeated outcomes allowed
+    """
+    ans = set([()])
+    for dummy_idx in range(length):
+        temp = set()
+        for seq in ans:
+            for item in outcomes:
+                new_seq = list(seq)
+                if item not in new_seq:
+                    new_seq.append(item)
+                    temp.add(tuple(new_seq))
+        ans = temp
+    return ans
+
+
+Coding gen_all_holds
+Implementing gen_all_holds is one of the main challenges of this mini - project. While its implementation is short, the actual code requires thought. Since tuples are immutable, your algorithm for computing the required set of tuples cannot directly delete from the tuple hand. Instead, gen_all_holds should compute the set of all possible holds in a manner very similar to that of gen_all_sequences. In particular, your implementation should iterate over the entries of hand and compute all possible holds for the first k entries in hand using all possible holds for the first k−1 entries of hand.
+
+
+def gen_all_sequences(outcomes, length):
+    """
+    Iterative function that enumerates the set of all sequences of
+    outcomes of given length.
+    DO NOT MODIFY.
+
+    outcomes:  possible values of a roll (ex. -- [1,2,3,4,5,6] for a 6-sided die)
+    """
+
+    ans = set([()])
+
+    for dummy_idx in range(length):
+        temp_set = set()
+        for seq in ans:
+            for item in outcomes:
+                new_seq = list(seq)
+                new_seq.append(item)
+                temp_set.add(tuple(new_seq))
+        ans = temp_set
+    return ans
+
+
+-----gen_all_holds test  # 1-----:
+
+hand: ()
+hand: (2, 4)
+# 2: Computed: set([(2, 4), (4, 2)]) Expected: set([(), (2,), (4,), (2, 4)])
+Test
+hand: (3, 3, 3)
+Test  # 4: Computed: set([]) Expected: set([(), (3,), (3, 3), (3, 3, 3)])
+hand: (1, 2, 2)
+# 3: Computed: set([]) Expected: set([(), (1, 2, 2), (1,), (2,), (1, 2),
+# (2, 2)])
+Test
+hand: (2, 3, 6)
+Test  # 5: Computed: set([(3, 6, 2), (6, 2, 3), (3, 2, 6), (2, 3, 6), (2, 6, 3), (6, 3, 2)]) Expected: set([(), (2,), (3,), (6,), (2, 3), (2, 6), (3, 6), (2, 3, 6)])
+
+Ran 5 tests. 4 failures.

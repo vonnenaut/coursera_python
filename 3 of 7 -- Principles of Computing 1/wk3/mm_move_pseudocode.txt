@@ -1,0 +1,39 @@
+def this_function_recursive(board, player)
+  board.clone()
+  for each empty square:
+    move(board, player)
+    call this_function_recursive(board, switch_player) # score board as +1, -1, or 0
+    if score:
+      if playerX and score == +1:
+        return score, square
+      elif playerY and score == -1:
+        return score, square
+      elif score == 0:
+        return score, square
+    elif no score:    
+      score = this_function_recursive(board, switch_player)
+  return score, square
+
+if score:
+            #     if PLAYERX and score == 1:
+            #         return score*SCORES[player], current_move
+            #     elif PLAYERO and score == -1:
+            #         return score*SCORES[player], current_move
+            #     elif score == 0:
+            #         return score*SCORES[player], current_move
+            # elif not score:
+            #     score, current_move = mm_move(board_copy, provided.switch_player(current_player))
+
+
+"""
+mm_move pseudocode 
+
+Your pseudocode has some problems.
+
+line5: You can call this_function_recursively() here.
+line 11-12: what we need to do is to pick up the move with thehighest score. 
+Consider the case that playerX has seven empty squares. 
+We need to check the score of each move. 
+If the score is 1, that move is one of the best and you can return (score,square). But, if score=0, you cannot treat this as the best because there are other candidate moves. What you need to do here is set this move as temporary best move and check next empty square.
+"""
+

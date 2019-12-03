@@ -1,0 +1,55 @@
+# for node in range(graph_size):
+	# 	degree = len(new_graph[node])
+	# 	if degree in degree_sets:
+	# 		degree_sets[degree].add(node)
+	# 	else:				
+	# 		random_set = random.choice(degree_sets)
+	# 		degree_sets[degree] = node
+	# print "random_set:", random_set
+	# print "\ndegree_sets:", degree_sets
+	# print "degree_sets[3]:", degree_sets
+
+	# node_list = []
+	# for key in range(graph_size):
+	# 	node_list.append(0)
+	# incr = 0
+	# # iterate through degree_sets in reverse order
+	# for value_k in reversed(range(graph_size)):
+	# 	# while len(degree_sets[value_k]) != 0 :
+	# 	while degree_sets:
+	# 		print "\ndegree_sets[%r]: %r" % (value_k, degree_sets[value_k])
+	# 		print "length of %r: %r" % (degree_sets[value_k], len(degree_sets[value_k]))
+	# 		try:
+	# 			if len(degree_sets[value_k]) > 1:
+	# 				arbitrary_elem_u = random_set.pop()
+	# 				print "arbitrary_elem_u:", arbitrary_elem_u
+	# 			elif len(degree_sets[value_k]) == 1:
+	# 				random_set = degree_sets[value_k]
+	# 				arbitrary_elem_u = degree_sets[value_k].pop()
+	# 				print "arbitrary_elem_u:", arbitrary_elem_u
+	# 			elif len(degree_sets[value_k]) == 0:
+	# 				print "Empty set..."
+	# 				print "elif break"
+	# 				break
+	# 		except KeyError:
+	# 				print "Empty set..."
+	# 				print "except break"
+	# 				break
+			
+	# 		del degree_sets[arbitrary_elem_u]
+	# 		print "random_set:", random_set
+	# 		print "arbitrary_elem_u:", arbitrary_elem_u
+	# 		for v in random_set:
+	# 			d = len(degree_sets[v])
+	# 			if d in degree_sets and v in degree_sets[d]:
+	# 				degree_sets[d].remove(v)
+	# 			if d > 0:
+	# 				degree_sets[d-1].add(v)
+	# 			node_list[incr] = arbitrary_elem_u
+	# 			incr += 1				
+	# 			print "arbitrary_elem_u:", arbitrary_elem_u
+	# 			del new_graph[arbitrary_elem_u]
+
+
+			
+	# return node_list

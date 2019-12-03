@@ -1,0 +1,22 @@
+# Quiz week 5
+
+1.  0 (correct)
+2.  100 + 100 + ... + 100 + 100 (correct)
+3.  100d (correct)
+4.  3 (incorrect) 2
+5.  1000 + 2000 + 3000 + .....  1000n (correct)
+6.  1/2(n+1)n (incorrect)  1/2(d+1)d
+7.  No (correct)
+8.  e^9.5d (incorrect) e^0.095d
+9.  x^(n+1) - 1 (incorrect) 1.15^(n-1)
+10.  upgrade increases faster than bribe (correct)
+11.  3036696 (70% correct)
+
+TEST_CASES = [[0, 2, 2, 0],
+[4, 4, 2, 2],
+[8, 16, 2, 2, 0, 4, 4],
+[0, 0, 2, 0, 2, 4, 8],
+[4, 4, 0, 0, 8, 0, 0, 8],
+[0, 2, 0, 2, 8, 8, 8, 8],
+[2, 2, 2, 2, 4, 4, 4]
+]

@@ -1,0 +1,22 @@
+Logarithms and Exponentials
+
+During this class, we will use two mathematical functions with which you should be familiar. The first function is the natural exponential exp(n)=en where e is Euler's constant 2.71828... The second function log(n) takes the natural logarithm of n with respect to the base e. These two functions are inversesof each other in the following sense:
+
+If exp(n)=m, then log(m)=n. Conversely, if log(m)=n, then exp(n)=m.
+In some situations, we may wish to work with different base such as base 2 or base 10. In this case, the base of the logarithm is typically indicated as a subscript to the log function. For example, the functions 2n and log2(n) are the examples of the exponential and logarithm function taken base 2.
+When working with exponentials and logarithms, we will often make use of two properties. The product of two exponentials is an exponential of the sum of the exponents while the logarithm of a product is the sum of logarithms of the product's multiplicands.
+
+exp(n+m)=exp(n)exp(m) log(n m)=log(n)+log(m)
+Log/Log plotting
+
+To illustrate the usefulness of logarithms, let us consider of the problem of determining whether a set of data points (xi,yi) lies on some polynomial function y=axn. This problem will sometimes crop up when we are trying to estimate the running time of a code fragment where each value of the xi is the size of the input to the code fragment and each value of the yi is an estimate of the running time of the code (such as the number of statements executed).
+
+Simply plotting the data points doesn't always help resolve this question since the constants a and n are unknown. Moreover, the range and scale of the plot can easily influence how "curved" the plot is. However, if we take the logarithm of both sides of this equation, the polynomial equation reduces to a linear equation in log(x) and log(y).
+
+log(y)=log(axn) log(y)=log(a)+nlog(x)
+If the data points (xi,yi) lie on y=axn, then they must satisfy the equation
+
+log(yi)=log(a)+nlog(xi)
+where log(a) and n are constants. This observation suggests a strategy for determining whether the data points lie close to a polynomial function. Plot the data points (log(xi),log(yi)) and check whether these data points lie near a straight line. If they do, the original data points (xi,yi) lie near a polynomial function. Moreover, the degree of this polynomial is simply the slope of this line.
+
+Many plotting packages support this kind of analysis by offering a log/log plotting option. Under this option, the axes are labelled with the various values of the x and y. However, these labels and the plotted data are positioned at the locations log(x) and log(y). For example, plots with axes labeled 1,10,100,1000,... are usually log/log plots.

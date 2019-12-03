@@ -1,0 +1,250 @@
+Homework 4
+Quiz, 17 questions
+Question 1
+
+
+
+1. Questions 1-3 will test your understanding of the feasibility conditions of global pairwise sequence alignment (that is, what makes an alignment). Let X=AC and Y=CA be two DNA sequences. Which of the following are global alignments of X and Y?
+
+X′=AC and Y′=CA.
+
+X′=AC−− and Y′=−−CA.
+
+
+
+
+
+2. How many possible global alignments are there for two sequences X and Y if |X|=|Y|=1? How many possible global alignments are there for two sequences X and Y if |X|=|Y|=2?
+
+Give your answer below as two numbers separated by a space (e.g., 17 100)
+
+3 7
+
+
+
+3. Recall from the feasibility conditions of a sequence alignment that for X′ and Y′ to be an alignment of two sequences X and Y, X′ and Y′ must satisfy this condition (among other conditions):
+
+    There does not exist an i such that Xi′=Yi′=−.
+
+What happens if we remove this condition; that is, allow Xi′=Yi′=− for some values of i?
+
+The number of possible alignments of a pair of sequences becomes infinite.
+
+
+
+
+
+4. Questions 4-5 will test your understanding of the optimality of global pairwise sequence alignment (that is, what the score of an alignment is and what makes an alignment optimal). Consider the scoring matrix M for alphabet Σ={A,C,T,G} with the following entries:
+
+    Mσ,σ=5 for every σ∈Σ.
+    Mσ,σ′=2 for every σ,σ′∈Σ and σ≠σ′.
+    Mσ,−=−2 for every σ∈Σ.
+    M−,σ=−4 for every σ∈Σ.
+
+What is the score of the following alignment:
+
+X'=AC--CT
+
+Y'=TACGGT
+3
+
+
+
+
+5. Let X=AC and Y=GG be two DNA sequences (Σ={A,C,T,G}), and consider the scoring matrix M given by:
+
+    Mσ,σ=6 for every σ∈Σ.
+    Mσ,σ′=2 for every σ,σ′∈Σ and σ≠σ′.
+    Mσ,−=M−,σ=−4 for every σ∈Σ.
+
+Under this scoring matrix, which pair of sequences below is the optimal global alignment of X and Y?
+
+X′=AC and Y′=GG.
+
+
+
+
+
+
+
+6. Let B(m,n) denote the number of global alignments of two sequences X and Y of lengths m and n, respectively. A
+
+recursive formula for B(m,n) is:
+
+B(m,n)=B(m−1,n)+B(m−1,n−1)+B(m,n−1).
+
+
+
+
+
+
+7. Questions 7-10 develop a dynamic programming (DP) algorithm for solving the Global Pairwise Alignment Problem. Algorithm GlobalAlignment below calls two helper algorithms to compute a global alignment.
+
+These two helper functions do the following:
+
+    Algorithm ComputeGlobalAlignmentScores computes a global alignment matrix S whose entries S[i,j] are the maximum scores over all possible global alignments for the pair of sequences X[0…i−1] and Y[0…j−1].
+    Algorithm ComputeAlignment takes this alignment matrix and traces backwards from the entry S[m,n] to the entry S[0,0] to compute the actual optimal global alignment of X and Y.
+
+If you find it easier to refer to, you can open this figure in another window with this link: figure.
+Question
+
+Since the entries S[i,j] of the global alignment matrix are the maximum scores for all possible global alignments for the pair of sequences X[0…i−1] and Y[0…j−1], which values of S will this dynamic programming method use in computing S[i,j] when i>0 and j>0?
+
+S[i−1,j−1], S[i−1,j], and S[i,j−1].
+
+
+
+
+
+
+8. In this question, we will complete the partial pseudo-code for Algorithm ComputeGlobalAlignmentScores that computes the global alignment matrix S. In particular, the entry S[i,j] of this matrix should contain the maximum score over every possible global alignment of the pair of sequences X[0…i−1] and Y[0…j−1].
+
+If you find it easier to refer to, you can open this figure in another window with this link: figure.
+
+The pseudo-code is missing details on Lines 1, 2, and 3. Which of the following options completes the algorithm so that it correctly computes the global alignment matrix S?    
+
+    Line 1: S[i−1,0] + MXi−1,−
+    Line 2: S[0,j−1] + M−,Yj−1
+    Line 3: max S[i−1,j−1] + MXi−1,Yj−1, S[i−1,j] + MXi−1,−, S[i,j−1]+M−,Yj−1
+
+    
+
+9. Here is the pseudo-code of an incomplete ComputeAlignment algorithm:
+
+If you find it easier to refer to, you can open this figure in another window with this link: figure.
+
+The pseudo-code above is missing details on Lines 1-6. Which of the following options completes the algorithm so that it correctly computes an optimal global alignment using the global alignment matrix S that was computed using Algorithm ComputeGlobalAlignmentScores?
+
+    Line 1: ε+X′
+    Line 2: ε+Y′
+    Line 3: Xi−1+X′
+    Line 4: "−"+Y′
+    Line 5: "−"+X′
+    Line 6: Yj−1+Y′
+
+    Line 1: Xi−1+X′
+    Line 2: Yj−1+Y′
+    Line 3: "−"+X′
+    Line 4: "−"+Y′
+    Line 5: "−"+X′
+    Line 6: "−"+Y′
+
+    Line 1: Xi−1+X′
+    Line 2: Yj−1+Y′
+    Line 3: Xi−1+X′
+    Line 4: "−"+Y′
+    Line 5: "−"+X′
+    Line 6: Yj−1+Y′
+
+    Line 1: Xi−1+X′
+    Line 2: Y′+Yj−1+Y′
+    Line 3: Xi−1+X′
+    Line 4: ε+Y′
+    Line 5: ε+X′
+    Line 6: Yj−1+Y′
+
+    Line 1: X′+Xi−1
+    Line 2: Y′+Yj−1
+    Line 3: X′+Xi−1
+    Line 4: Y′+"−"
+    Line 5: X′+"−"
+    Line 6: Y′+Yj−1
+
+    Line 1: ε+X′
+    Line 2: ε+Y′
+    Line 3: Xi−1+X′
+    Line 4: ε+Y′
+    Line 5: ε+X′
+    Line 6: Yj−1+Y′
+
+
+
+
+
+
+10. Given two strings X and Y of lengths m and n, respectively, which of the following gives the tightest worst-case running time of Algorithm GlobalAlignment as given by the pseudo-code in Question 7?
+
+O(m n)
+
+
+
+
+
+
+11. Recall that given a string x, the string v is a substring of x if there exist strings u and w such that x=u+v+w.
+
+Given a string x of length n, how many substrings v of x are there?
+
+You may assume that each character of x is distinct if necessary to clarify the problem. Enter your answer below as a mathematical expression in n.
+Preview
+1/2*(n+1)*(n+2)-n
+
+
+
+
+12. In Questions 12-15, we will make simple modifications to ComputeGlobalAlignmentScores and ComputeAlignment that yield an efficient algorithm for the Local Pairwise Alignment Problem.
+
+In this question, we will focus on modifying ComputeGlobalAlignmentScores to compute a matrix of local alignment scores. Our modification is as follows: Whenever Algorithm ComputeGlobalAlignmentScores (in Question 8) computes a value to assign to S[i,j], if the computed value is negative, the algorithm instead assigns 0 to S[i,j]. The result of this computation is the local alignment matrix for the two sequences. No other modification is done.
+
+As an example, consider two strings X=AA and Y=TAAT   over the alphabet Σ={A,C,T,G}    and the scoring matrix M given by:
+
+    Mσ,σ=10 for every σ∈Σ.
+    Mσ,σ′=4 for every σ,σ′∈Σ and σ≠σ′.
+    Mσ,−=M−,σ=−6 for every σ∈Σ.
+
+Given the two sequences X and Y and the scoring matrix M, what values would the modified algorithm assign to the entries S[0,2], S[2,0] and S[2,2] of the local alignment matrix S?
+
+Enter your answer below as three numbers separated by spaces.
+
+
+
+
+13. During the computation of a global alignment, the traceback in the global alignment matrix S starts at the bottom right corner of the matrix (S[m,n]) and traces to the upper left corner (S[0,0]). Given the local alignment matrix S computed in Question 12, Algorithm ComputeAlignment (in Question 9) can be modified to generate a local alignment of two sequences as follows:
+
+Start the traceback from the entry in S that has the maximum value over the entire matrix and trace backwards using exactly the same technique as in ComputeAlignment. Stop the traceback when the first entry with value 0 is encountered. If the local alignment matrix has more than one entry that has the maximum value, any entry with maximum value may be used as the starting entry.
+
+As an concrete example of this process, what is the maximum value in an entry in the local alignment matrix S that you computed in Question 12? Enter your answer below as a single number.
+
+20
+
+
+
+
+14. At what entry does the modified ComputeAlignment (in Question 13) start the traceback and at what entry does it end the traceback?
+
+If the traceback starts at entry S[i,j] and ends at entry S[k,l], what are the values for the starting entry (i,j) and ending entry (k,l). Enter your answer below as four individual numbers i, j, k, l, separated by spaces. For example, if the traceback starts at entry S[15,20] and ends at entry S[2,4], you should enter 15 20 2 4 below.
+
+
+
+
+
+15. Using the modified ComputeGlobalAlignmentScores and ComputeAlignment algorithms in Questions 12 and 13, what is the local alignment they compute on the sequences X and Y using the scoring matrix in Question 12?
+
+X′=AA and Y′=AA
+
+X′=−AA− and Y′=TAAT
+
+X′=−AA and Y′=TAA
+
+X′=AA− and Y′=AAT
+
+X′=A and Y′=A
+
+
+
+
+
+16. Given two strings X and Y of lengths m and n, respectively, which of the following gives the tightest worst-case running time of computing a local alignment of the two strings using the modified algorithms in Questions 12 and 13?
+
+O(m n)
+
+
+
+
+
+
+17. Is this statement true or false?
+
+If all entries in a scoring matrix M are non-negative, then the score of an optimal local alignment and an optimal global alignment of two sequences X and Y using M are identical.
+
+True

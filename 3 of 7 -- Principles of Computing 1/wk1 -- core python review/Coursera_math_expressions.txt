@@ -1,0 +1,44 @@
+Coursera
+
+Math Expressions for Homework
+
+For some homework questions, you will be asked to enter a math expression (instead of a number) as the answer to a problem. Coursera's quiz system can recognize and symbolically processes math expressions created using a combination of standard mathematical constants and functions as well as unknown variables. For example, you can enter the math expression (1+x)2 as the text (1 + x) ^ 2. The power of Coursera's system is that it will automatically check whether the expression you entered is equivalent to the answer entered by the instructor, even if the two answers are in different forms. For example, the expression 1 + 2 * x + x ^ 2 will be recognized as equivalent to (1+x)2 while 1 + x + x ^ 2 will be recognized as being different.
+
+This guide outlines the basics of entering mathematical expression in the form that Coursera expects. You can use basic symbols for addition (+), subtraction (-), multiplication (*), division (/), and power/exponential (^) and some mathematical functions. Listed below the mathematical functions and constants that Coursera's system recognizes:
+
+    abs
+    arg (returns phase in radians of a complex number)
+    ceiling
+    conjugate
+    deg (converts radians to degrees)
+    exp
+    floor
+    gcd (2 arguments only; otherwise you must type it as "gcd((a, b, c, d))" or "gcd([a, b, c, d])" e.g. a list/tuple)
+    im (get imaginary part of a number)
+    lcm (2 arguments only; otherwise you must type it as "gcd((a, b, c, d))" or "gcd([a, b, c, d])" e.g. a list/tuple)
+    ln
+    log (also base e, same as ln)
+    max
+    min
+    mod
+    rad (converts degrees to radians)
+    re (get real part of a number)
+    root (2-argument, where root(a, 2) is equivalent to sqrt(a))
+    sqrt
+    sign (returns -1 if negative, 0 if zero, 1 if positive)
+    Trigonometric functions: acos, acosh, acot, acoth, asin, asinh, atan, atan2 (2-argument arctangent), atanh, cos, cosh, cot, coth, sin, sinh, tan, tanh
+    Other functions: erf, binomial
+
+There are also a few built-in constants, some of which are capitalized:
+
+    Catalan (Catalan's constant)
+    E (note uppercase)
+    EulerGamma (Euler-Mascheroni constant)
+    GoldenRatio
+    I (sqrt(-1) - note uppercase)
+    J (sqrt(-1), same as I)
+    nan
+    oo (infinity)
+    pi
+    zoo (complex infinity)
+

@@ -1,0 +1,37 @@
+# minimax pseudocode #2
+
+function minimax(board, depth, isMaximizingPlayer):
+
+    if current board state is a terminal state :
+        return value of the board
+    
+    if isMaximizingPlayer :
+        bestVal = -INFINITY 
+        for each move in board :
+            value = minimax(board, depth+1, false)
+            bestVal = max( bestVal, value) 
+        return bestVal
+
+    else :
+        bestVal = +INFINITY 
+        for each move in board :
+            value = minimax(board, depth+1, true)
+            bestVal = min( bestVal, value) 
+        return bestVal
+
+# python code
+# recursive case:
+    # if player == PLAYERX:
+    #     best_score = -99
+    #     for move in board_copy.get_empty_squares():
+    #         board_copy.move(move[0], move[1], player)
+    #         score = mm_move(board_copy, provided.switch_player(player))
+    #         best_score = max(best_score, score)
+    #     return best_score
+    # else:
+    #     best_score = 99
+    #     for move in board_copy.get_empty_squares():
+    #         board_copy.move(move[0], move[1], player)
+    #         score = mm_move(board_copy, provided.switch_player(player))
+    #         best_score = min(best_score, score)
+    #     return best_score

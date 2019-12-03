@@ -1,0 +1,36 @@
+
+Coursera 
+Week 4
+
+Permutations and Combinations
+
+In some cases where a sequence of trials is conducted, we would like to preclude having the same outcome occur twice. For example, consider the case of a lottery in which ping-pong balls are drawn one at a time from a lottery machine. Once the first ball is drawn, it is set aside and that ball cannot be redrawn later in the drawing process. In cases like this one, we are often interested in the number of possible sequences associated with this process.
+
+This question is a well-studied one and two mathematical tools are available to help in the analysis. Both of these tools rely on a mathematical function that you may be familiar with. The factorial of a non-negative integer m (denoted m!) is the product of the numbers 1×2×3×...×(m−1)×m. For example, 4!=1×2×3×4=24. To simplify various formula involving factorials, 0! is defined to be 1. The factorial function can be accessed in Python using the math module. For example,
+
+
+
+1
+2
+3
+import math
+print math.factorial(6)
+prints 720 in the console.
+
+Permutations
+
+Given a set of outcomes, a sequence of outcomes of length n with no repetition is apermutationof size n of this set. For our lottery example, if the set of outcomes is {1,2,3,...,59}, the ordered sequence (34,12,27,56,58) is a permutation of length five. Observe that the sequence (23,11,23,3,47) would not be a permutation since the outcome 23 is repeated. Also, note that the permutation (34,12,27,56,58) is distinct from the permutation (56,12,27,34,58) since the ordering of the elements in the permutation matters.
+
+A common question when working with permutations is "How many permutations of length n are possible given a set of outcomes of size m?" Computing the answer requires a little counting. In generating the ordered sequence associated with the permutation, there are m choices for the first element, m−1 choices for the second element, and so on, with m−n+1 choices for the nth element. Thus, in total, there are
+
+m×(m−1)×...×(m−n+1)
+possible permutations. This product can be conveniently written as m!(m−n)! since all of the terms in products in the numerator and denominator that are less than or equal to m−n cancel out leaving the desired product.
+
+Combinations
+
+As was the case when repetition was allowed, the order of the resulting sequence may not matter in some applications. The standard technique for handling this situation is to group all sequences that correspond to the same set of outcomes in a single cluster. (Note we can use a set here instead of a sorted sequence since repetition is not allowed.) The sets of outcomes associated with each cluster is acombinationof this set. For example, most lotteries require only that your set of numbers match those drawn during the lottery to win. The order in which the numbers are drawn is irrelevant. In this case, the sets {34,12,27,56,58} and {56,12,27,34,58} represent the same combination of lottery numbers.
+
+The number of combinations of size n associated with a set of outcomes of size m also has a simple formula in terms of factorials. As noted previously, there are m!(m−n)! permutations of length n. These permutations can be grouped into clusters where all of the permutations in a single cluster involve the same outcomes, but in different orders. Note that in this model, each cluster corresponds to a combination. Since there are n! possible ordered sequences of outcomes in each cluster, the total number of possible combinations is m!(m−n)!n! which is often written mathematically as (mn).
+Mark as completed
+
+

@@ -1,0 +1,19 @@
+1.  None
+2.  1
+3.  if self._parent is None:
+    return self
+else:
+    return self._parent.get_root()
+
+4.  
+if self._parent is None:
+    return 0
+else:
+    return self._parent.depth() + 1
+
+5.  2**n
+6.  2**(n+1) - 1
+7.  84
+8.  children, height, num_leaves, num_nodes INCORRECT..   num_leaves, num_nodes
+9.  [[[a], [b], c], [e], d]
+10.  In-order traversal

@@ -1,0 +1,9 @@
+
+
+
+"""
+[-10.0 pts] strategy_best: simulate_clicker(provided.BuildInfo(), SIM_TIME, strategy_best) produced 10000000000.0 total cookies
+[-2.0 pts] strategy_cheap(3.0, 100.0, [(0.0, None, 0.0, 0.0)], 600.0, provided.BuildInfo({'A': [5.0, 1.0], 'C': [50000.0, 3.0], 'B': [500.0, 2.0]}, 1.15)) expected 'A' but received 'C'
+[-1.0 pts] strategy_expensive(0.0, 1.0, [(0.0, None, 0.0, 0.0)], 5.0, provided.BuildInfo({'A': [5.0, 1.0], 'C': [50000.0, 3.0], 'B': [500.0, 2.0]}, 1.15)) expected 'A' but received "(Exception: Returned Type Mismatch) Expected type 'str' but returned type 'NoneType'."
+[-11.1 pts] simulate_clicker(provided.BuildInfo({'Cursor': [15.0, 50.0]}, 1.15), 16.0, <function strategy_cursor_broken at 0xf01b49b0>) expected obj: Time: 16.0 Current Cookies: 13.9125 CPS: 151.0 Total Cookies: 66.0 History (length: 4): [(0.0, None, 0.0, 0.0), (15.0, 'Cursor', 15.0, 15.0), ..., (16.0, 'Cursor', 19.837499999999999, 66.0)] but received (printed using your __str__ method) Time: 16.0 Current Cookies: 16.5 CPS: 151.0 Total Cookies: 66.0
+"""

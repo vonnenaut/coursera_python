@@ -1,0 +1,17 @@
+Principles of Computing 2
+Week 1 Quiz
+
+1. n^2
+2. n log(n) comparisons
+3. n
+4. The first element pushed onto the stack is the last element popped off of the stack.    The last element pushed onto the stack is the first element popped off of the stack.
+5. The first element enqueued into the queue is the first element dequeued out of the queue.    The last element enqueued into the queue is the last element dequeued out of the queue.
+6. up = (row - 1) % self._grid_height
+down = (row + 1) % self._grid_height
+left = (col - 1) % self._grid_width
+right = (col + 1) % self._grid_width
+return [[up, col], [down, col], [row, left], [row, right]]
+7. if self.is_empty(neighbor[0], neighbor[1]):
+8. mn
+9. 77
+10.

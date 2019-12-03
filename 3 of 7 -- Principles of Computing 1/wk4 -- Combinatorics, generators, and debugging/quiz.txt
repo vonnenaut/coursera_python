@@ -1,0 +1,65 @@
+1.  10 (incorrect)
+2.  2.5 (incorrect)
+Remember that there are sixteen possible pairs of die values, each with probability 1/16.
+
+3.  .0000000001000 (incorrect)
+Remember that the probability of event is the sum of the probabilities associated with each of its outcomes.
+
+4.  
+total possible permutations: m!/(m-n)!
+
+10!/5! = 30240
+
+probability: sums to 1
+01234, 12345, 23456, 34567, 45678, 56789, 67890 (x 2 for reverse, i.e., descending) = 14 of 30240
+14/30240 = 0.00046296 (incorrect)
+
+5.  b, e, c d (correct)
+
+6.  {}, {1,2}, {1}
+
+7. 
+Remember to include the empty set and the set itself in your count.
+
+8. 13!/(13-5)!*5! = 1287
+Remember to account for the fact that there are four possible suits.
+
+9.
+
+10.
+
+1!
+1! 1!
+
+
+"""
+Iterative program to print out Pascal's triangle
+"""
+
+TRIANGLE_HEIGHT = 5
+
+def next_line(current_line):
+    """
+    Given a line in Pascal's triangle, generate the following line
+    """
+    
+    ans = [1]
+    
+    for idx in range(len(current_line) - 1):
+        ans.append(current_line[idx] + current_line[idx + 1])
+    
+    ans.append(1)
+    
+    return ans
+
+def run_example():
+    # code to print out Pascal's triangle
+    pascal_line = [1]	# row zero
+    print pascal_line
+    
+    for dummy_idx in range(TRIANGLE_HEIGHT - 1):
+        pascal_line = next_line(pascal_line)
+        print pascal_line
+        
+run_example()
+    

@@ -1,0 +1,130 @@
+Algorithmic Thinking 2
+Week 1
+HW (#3)
+
+1. 3
+How many inversions in 
+A = [5, 4, 3, 6, 7] ?
+
+*2. n*(n-1)/2 
+n^3  Consider which class of examples generated the maximal number of inversions and derive a formula for the number of inversions as an arithmetic sum.
+n^2/2
+
+3.  n^2
+
+4.  B[i] <= C[j]
+	p - i
+
+	Hint:  note that CountInversions sorts A as a byproduct of counting the inversions.
+
+Algorithm 1: CountInversions.
+	Input: ArrayA[0...n1].
+	Output: The number of inversions in A.
+	
+	if n=1 then
+		return0;
+	else
+		copy A[0...[n/2] - 1] to B[0...[n/2] - 1];
+		copyA[[n/2]...n - 1] to C[0...[n/2] - 1];
+		il <-- CountInversions(B);
+		ir <-- CountInversions(C);
+		im <-- Merge(B, C, A);
+		return il + ir + im;
+
+Algorithm 2: Merge.
+	Input: Two sorted arrays B[0...p1] and C[0...q1], and an array A[0..p+q1].
+	Output: The number of inversions involving an element from B and an element from C.
+	Modifies:A.
+	
+	count <-- 0;
+	i <-- 0; j <-- 0; k <-- 0;
+	while i < p and j < q do
+		if ... then 
+			A[k] <-- B[i]; i <-- i + 1;
+		else
+			A[k] <-- C[j]; j <-- j + 1;
+			count <-- count + ...;
+		k <-- k+1;
+	if i = p then
+		copy C[j...q - 1] to A[k...p + q - 1];
+	else 
+		copy B[i...p - 1] to A[k...p + q - 1];
+	return count;
+
+
+5. T(n) = 2T(n/2) + O(n) 
+
+
+6. O(n^2)
+
+
+*7. O(n^3) 
+	O(n^2)  Incorrect. Review the Master theorem.
+    O(n log n) Incorrect. Review the Master theorem.
+
+
+8.  3
+	What does Mystery([-2,0,1,3,7,12,15],0,6) compute?
+
+
+*9.  Returns i if there exists an i such that A[i]=i, and −1 otherwise.
+Returns i if there exists an i such that A[i]>A[⌊(n−1)/2⌋], and −1 otherwise.  Incorrect. Focus on lines 3 and 4.
+Returns i if there exists an i such that A[i]<A[⌊(n−1)/2⌋], and −1 otherwise. Incorrect. Focus on lines 3 and 4.
+
+
+10.  Best case: O(1) Worst case: O(log n)
+
+
+
+*11.  S(n,k)=k S(n,k−1)
+S(n,k)=k S(n−1,k−1)  Incorrect. Consider the question-level explanation.
+
+*12. n - 1 
+(2^n)−1  Incorrect. See the question-level explanation.
+
+
+
+13.  O(n2+h(n) n)
+
+14. O(q k n)
+
+
+
+*15.  O(log n)
+O(n log n)  Incorrect. A faster method is possible.
+O(n2)  Incorrect. A faster method is possible.
+
+
+
+16.  O(n2)
+
+
+17.  T(n)=2 T(n/2)+f(n)
+T(2)=d
+
+	Master Theorem:  T(n) = aT(n/b) + f(n)
+	T(1) = C
+
+	a >= 1, b >= 2, c> 0
+	If f(n) = O(n^d), d >= 0, then
+
+	T(n) = 
+			O(n^2) if a < b^2
+			O(n^2 log n) if a = b^2
+			O(n log a to b) if a > b^2
+
+
+
+*18. O(n log n)
+O(n) Incorrect. Consider the cost of executing line 2 in the worst case.
+O(n2) Incorrect. Reconsider the cost of lines 5-7. In particular, note that the inner loop only iterates from u+1 to u+3.
+
+
+
+*19.  O(n log^2 n)
+O(n^2 log n) Incorrect. The worst case running time is faster.
+O(nlogn) Almost. The worst case running time is slightly slower.
+
+
+
+20.  O(n log n)
